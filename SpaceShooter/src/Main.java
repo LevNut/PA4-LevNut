@@ -57,6 +57,8 @@ public class Main extends Application {
             Stage newStage = (Stage) ((Node) e.getSource()).getScene().getWindow();
             stage.setScene(new Scene(new Pane()));
             //set.setSounds("main");
+            System.out.println("Test");
+            
             try {
                 fs.start(newStage);
             } catch (Exception ex) {
