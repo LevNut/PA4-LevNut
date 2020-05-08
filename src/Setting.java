@@ -1,11 +1,15 @@
+import javafx.scene.Scene;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.Pane;
 import javafx.scene.media.AudioClip;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
 import java.net.URL;
 
@@ -39,15 +43,11 @@ public class Setting {
         Menu menu = new Menu("Difficulty Levels");
 
         MenuItem normal = new MenuItem("Normal");
-        normal.setOnAction(e -> {
-            isHard = false;
-        });
+        normal.setOnAction(e -> isHard = false);
 
 
         MenuItem hard = new MenuItem("God");
-        hard.setOnAction(e -> {
-            isHard = true;
-        });
+        hard.setOnAction(e -> isHard = true);
 
         menu.getItems().addAll(normal, hard);
 
@@ -57,7 +57,7 @@ public class Setting {
         return bar;
     }
 
-    public void setLifes(ImageView h1, ImageView h2, ImageView h3) {
+    public void setLives(ImageView h1, ImageView h2, ImageView h3) {
         h1.setFitHeight(50);
         h1.setFitWidth(50);
         h1.setTranslateX(300);
@@ -82,7 +82,6 @@ public class Setting {
         if (!main.isPlaying()) main.play();
 
         main.play();
-
 
 
     }
@@ -113,11 +112,27 @@ public class Setting {
         text.setFill(Color.YELLOW);
         text.setTranslateX(180);
         text.setTranslateY(-50);
-        text.setFont(Font.font ("Impact", 40));
+        text.setFont(Font.font("Impact", 40));
 
     }
 
     public boolean getIsHard() {
         return isHard;
     }
+
+    public void setScreen(Stage stage, Pane root) {
+        root.setPrefSize(800, 500);
+        root.setStyle("-fx-background-color: BLACK;");
+
+
+        BorderPane l = new BorderPane();
+        l.setTop(this.setMenu());
+        l.setCenter(root);
+
+        Scene scene = new Scene(l);
+        stage.setScene(scene);
+        stage.sizeToScene();
+        stage.show();
+    }
+
 }

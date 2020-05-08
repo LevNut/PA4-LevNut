@@ -12,8 +12,6 @@ import javafx.stage.Stage;
 import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 
-import java.awt.*;
-
 /**
  * A length converter that convert from unit to unit.
  * Users can insert the value that you want to convert,
@@ -25,12 +23,12 @@ public class GameOverHandler extends Application {
     BorderPane l;
 
     //Scene Images
-    String retry = "Images/retry.png";
-    String exit = "Images/exit.png";
+    final String retry = "Images/retry.png";
+    final String exit = "Images/exit.png";
     Text text;
 
     /**
-     * Setup GUI
+     * Setup GUI.
      *
      * @param stage the javafx stage to setup
      */
@@ -74,29 +72,17 @@ public class GameOverHandler extends Application {
         });
 
         exiI.setPickOnBounds(true);
-        exiI.setOnMouseClicked((MouseEvent e) -> {
-            System.exit(1);
-        });
+        exiI.setOnMouseClicked((MouseEvent e) -> System.exit(1));
 
 
         //////////// set images button ////////////
 
 
-        root.setPrefSize(800, 500);
-        root.setStyle("-fx-background-color: BLACK;");
-
-
-        l = new BorderPane();
-        l.setTop(set.setMenu());
-        l.setCenter(root);
-
-        Scene scene = new Scene(l);
-        stage.setScene(scene);
-        stage.sizeToScene();
-        stage.show();
+        set.setScreen(stage, root);
 
         root.getChildren().addAll(text, retI, exiI);
     }
+
 
     /**
      * Adding and setting up the components of stages.

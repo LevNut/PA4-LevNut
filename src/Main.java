@@ -22,13 +22,13 @@ public class Main extends Application {
     BorderPane l;
 
     //Scene Images
-    String jupiter = "Images/Jupiter.png";
-    String logo = "Images/Logo.png";
-    String play = "Images/play.png";
-    String exit = "Images/exit.png";
+    final String jupiter = "Images/Jupiter.png";
+    final String logo = "Images/Logo.png";
+    final String play = "Images/play.png";
+    final String exit = "Images/exit.png";
 
     /**
-     * Setup GUI
+     * Setup GUI.
      *
      * @param stage the javafx stage to setup
      */
@@ -41,16 +41,15 @@ public class Main extends Application {
 
 
         //////////// set image ////////////
-        Image jup = new Image(jupiter);
-        ImageView jupI = new ImageView(jup);
+        ImageView jupI = getImageView(jupiter);
 
-        Image log = new Image(logo);
-        ImageView logI = new ImageView(log);
+        ImageView logI = getImageView(logo);
+
+        ImageView plaI = getImageView(play);
+
         //////////// set image ////////////
 
         //////////// set images button ////////////
-        Image pla = new Image(play);
-        ImageView plaI = new ImageView(pla);
         plaI.setPickOnBounds(true);
         plaI.setOnMouseClicked((MouseEvent e) -> {
             Stage newStage = (Stage) ((Node) e.getSource()).getScene().getWindow();
@@ -68,32 +67,22 @@ public class Main extends Application {
 
         });
 
-        Image exi = new Image(exit);
-        ImageView exiI = new ImageView(exi);
+        ImageView exiI = getImageView(exit);
         exiI.setPickOnBounds(true);
-        exiI.setOnMouseClicked((MouseEvent e) -> {
-            System.exit(1);
-        });
+        exiI.setOnMouseClicked((MouseEvent e) -> System.exit(1));
 
 
         set.setImages(jupI, logI, plaI, exiI);
         //////////// set images button ////////////
 
-
-        root.setPrefSize(800, 500);
-        root.setStyle("-fx-background-color: BLACK;");
-
-
-        l = new BorderPane();
-        l.setTop(set.setMenu());
-        l.setCenter(root);
-
-        Scene scene = new Scene(l);
-        stage.setScene(scene);
-        stage.sizeToScene();
-        stage.show();
+        set.setScreen(stage, root);
 
         root.getChildren().addAll(jupI, logI, plaI, exiI);
+    }
+
+    private ImageView getImageView(String img) {
+        Image imgReal = new Image(img);
+        return new ImageView(imgReal);
     }
 
     /**
