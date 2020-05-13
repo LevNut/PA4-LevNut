@@ -23,6 +23,7 @@ public class FightScene extends Application {
     final String heart1 = "Images/h1.png";
     final String heart2 = "Images/h2.png";
     final String heart3 = "Images/h3.png";
+    final String alien = "Images/alien.png";
     final String laser = "Images/laser.png";
     ////////////////// Images //////////////////
 
@@ -93,9 +94,9 @@ public class FightScene extends Application {
         lasI.setTranslateY(rocI.getTranslateY());
         /////////////////// Set Images ///////////////////
 
-        ImageView h = new ImageView(heart3);
-        h.setFitWidth(50);
-        h.setFitHeight(50);
+        ImageView core = new ImageView(alien);
+        core.setFitWidth(30);
+        core.setFitHeight(30);
 
 
         ///////////////////// Scene Setting /////////////////////
@@ -165,8 +166,8 @@ public class FightScene extends Application {
 
 
                 ufo.randomEnemyMovement(uI1);
-                h.setTranslateX(uI1.getTranslateX() - 500);
-                h.setTranslateY(uI1.getTranslateY());
+                core.setTranslateX(uI1.getTranslateX() - 460);
+                core.setTranslateY(uI1.getTranslateY());
 
 
             }
@@ -176,7 +177,7 @@ public class FightScene extends Application {
         ///////////////////// Animation Setting /////////////////////
 
 
-        root.getChildren().addAll(uI1, rI, lasI, rocI, hI1, hI2, hI3, h);
+        root.getChildren().addAll(uI1, rI, lasI, rocI, hI1, hI2, hI3, core);
 
     }
 
@@ -195,10 +196,6 @@ public class FightScene extends Application {
 
         return pane;
     }
-
-//    public double getOriginY() {
-//        return OriginY;
-//    }
 
     public int getScore() {
         if (score / 10_000 <= 0) score = 0;

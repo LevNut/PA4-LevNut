@@ -15,6 +15,6 @@
 
 - By pressing UP, DOWN, RIGHT, LEFT on keyboard, the player will control the rocket freely in 2 dimensional movement.
 - The laser will be automatically shoots
-- Once the laser hits the enemy(UFO) the heart will decreased by one.
+- Once the laser hits the enemy(A purple alien) the heart will decreased by one.
 - After an enemy are out of hearts, the game will finished and the score will be announced.
 - The scores will be decreased over time, so the faster player destroys an enemy, the higher the score they will earned.
