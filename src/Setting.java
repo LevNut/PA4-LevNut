@@ -13,10 +13,23 @@ import javafx.stage.Stage;
 
 import java.net.URL;
 
+/**
+ * Setting game properties.
+ *
+ * @author Teeranut Sawanyawat 6210545491.
+ */
 public class Setting {
     URL path;
     static boolean isHard = false;
 
+    /**
+     * Setting Images of GameApplication screen.
+     *
+     * @param jupI ImageView of jupiter.
+     * @param logI ImageView of logo.
+     * @param plaI ImageView of play button.
+     * @param exiI ImageView of exit button.
+     */
     public void setImages(ImageView jupI, ImageView logI, ImageView plaI, ImageView exiI) {
         jupI.setFitHeight(400);
         jupI.setFitWidth(400);
@@ -39,6 +52,11 @@ public class Setting {
         exiI.setTranslateY(-200);
     }
 
+    /**
+     * Adding MenuBar.
+     *
+     * @return MenuBar a menu bar of this application.
+     */
     public MenuBar setMenu() {
         Menu menu = new Menu("Difficulty Levels");
 
@@ -57,6 +75,13 @@ public class Setting {
         return bar;
     }
 
+    /**
+     * Setting Lives.
+     *
+     * @param h1 ImageView of heart.
+     * @param h2 ImageView of heart.
+     * @param h3 ImageView of heart.
+     */
     public void setLives(ImageView h1, ImageView h2, ImageView h3) {
         h1.setFitHeight(50);
         h1.setFitWidth(50);
@@ -74,6 +99,11 @@ public class Setting {
         h3.setTranslateY(-300);
     }
 
+    /**
+     * Setting Sounds.
+     *
+     * @param commands the input command.
+     */
     public void setSounds(String commands) {
         if (commands.equals("main")) path = getClass().getResource("Sounds/Main_theme.wav");
 
@@ -86,7 +116,12 @@ public class Setting {
 
     }
 
-
+    /**
+     * Setting Border.
+     *
+     * @param rocI ImageView of rocket.
+     * @param rocketPosX the coordinate x position of rocket.
+     */
     public void setBorder(ImageView rocI, double rocketPosX) {
         if (rocI.getTranslateX() >= -200) rocI.setTranslateX(rocketPosX);
         if (rocI.getTranslateX() <= -550) rocI.setTranslateX(rocI.getTranslateX() + 5);
@@ -94,6 +129,12 @@ public class Setting {
         if (rocI.getTranslateY() >= 300) rocI.setTranslateY(rocI.getTranslateY() - 5);
     }
 
+    /**
+     * Setting GameOver screen.
+     *
+     * @param retry ImageView of retry button.
+     * @param exit ImageView of exit button.
+     */
     public void setGameOverScene(ImageView retry, ImageView exit) {
 
         retry.setFitHeight(62);
@@ -108,6 +149,11 @@ public class Setting {
 
     }
 
+    /**
+     * Setting the score of player.
+     *
+     * @param text the javafx text.
+     */
     public void setScore(Text text) {
         text.setFill(Color.YELLOW);
         text.setTranslateX(180);
@@ -116,10 +162,21 @@ public class Setting {
 
     }
 
+    /**
+     * Get the isHard.
+     *
+     * @return isHard a boolean of difficulty levels.
+     */
     public boolean getIsHard() {
         return isHard;
     }
 
+    /**
+     * Setting the screen.
+     *
+     * @param stage Stage of javafx.
+     * @param root Pane of javafx.
+     */
     public void setScreen(Stage stage, Pane root) {
         root.setPrefSize(800, 500);
         root.setStyle("-fx-background-color: BLACK;");

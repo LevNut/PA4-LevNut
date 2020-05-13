@@ -12,11 +12,9 @@ import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 
 /**
- * A length converter that convert from unit to unit.
- * Users can insert the value that you want to convert,
- * and it will gives the user the converted values.
+ * An application that run all files to play Space Shooter.
  *
- * @author Teeranut Sawanyawat 6210545491
+ * @author Teeranut Sawanyawat 6210545491.
  */
 public class GameApplication extends Application {
     BorderPane l;
@@ -30,7 +28,7 @@ public class GameApplication extends Application {
     /**
      * Setup GUI.
      *
-     * @param stage the javafx stage to setup
+     * @param stage the javafx stage to setup.
      */
     @Override
     public void start(Stage stage) throws Exception {
@@ -104,7 +102,7 @@ public class GameApplication extends Application {
     /**
      * Start and launch the application.
      *
-     * @param args for launching
+     * @param args for launching.
      */
     public static void main(String[] args) {
         launch(args);

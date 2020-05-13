@@ -13,9 +13,8 @@ import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 
 /**
- * A length converter that convert from unit to unit.
- * Users can insert the value that you want to convert,
- * and it will gives the user the converted values.
+ * A scene that prepared for the player who already finished the game
+ * which the scene will tells the score to the user.
  *
  * @author Teeranut Sawanyawat 6210545491
  */
@@ -30,7 +29,7 @@ public class GameOverHandler extends Application {
     /**
      * Setup GUI.
      *
-     * @param stage the javafx stage to setup
+     * @param stage the javafx stage to setup.
      */
     @Override
     public void start(Stage stage) throws Exception {
@@ -103,7 +102,7 @@ public class GameOverHandler extends Application {
     /**
      * Start and launch the application.
      *
-     * @param args for launching
+     * @param args for launching.
      */
     public static void main(String[] args) {
         launch(args);

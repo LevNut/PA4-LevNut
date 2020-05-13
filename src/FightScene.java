@@ -11,6 +11,11 @@ import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
+/**
+ * The process of fighting scene in Space Shooter.
+ *
+ * @author Teeranut Sawanyawat 6210545491.
+ */
 public class FightScene extends Application {
     // Origin point of X and Y
     final double originX = 400;
@@ -35,6 +40,11 @@ public class FightScene extends Application {
     BorderPane l;
     int lives = 3;
 
+    /**
+     * Setup GUI.
+     *
+     * @param stage the javafx stage to setup.
+     */
     @Override
     public void start(Stage stage) throws Exception {
         stage.setTitle("Space Shooter");
@@ -181,11 +191,22 @@ public class FightScene extends Application {
 
     }
 
+    /**
+     * Create ImageView.
+     *
+     * @param img source of picture.
+     * @return ImageView of picture.
+     */
     private ImageView getImageView(String img) {
         Image u1 = new Image(img);
         return new ImageView(u1);
     }
 
+    /**
+     * Adding and setting up the components of stages.
+     *
+     * @return pane the component and layout for scene.
+     */
     private Pane initComponents() {
         FlowPane pane = new FlowPane();
 
@@ -197,6 +218,11 @@ public class FightScene extends Application {
         return pane;
     }
 
+    /**
+     * Getting the score.
+     *
+     * @return score/10_000 for easy understanding amount.
+     */
     public int getScore() {
         if (score / 10_000 <= 0) score = 0;
         return score / 10_000;
