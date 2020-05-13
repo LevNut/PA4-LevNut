@@ -18,7 +18,7 @@ import javafx.scene.input.MouseEvent;
  *
  * @author Teeranut Sawanyawat 6210545491
  */
-public class Main extends Application {
+public class GameApplication extends Application {
     BorderPane l;
 
     //Scene Images
